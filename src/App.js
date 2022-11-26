@@ -1,14 +1,28 @@
 import './App.css';
 import ClassMouse from './components/useEffect/ClassBase/ClassMouse';
+import ComponentC from './components/useEffect/functionbased/ComponentC';
+import FetchData from './components/useEffect/functionbased/FetchData';
 import HookMouse from './components/useEffect/functionbased/HookMouse';
 import MouseContainer from './components/useEffect/functionbased/MouseContainer';
+import React from 'react';
+
+export const UserContext = React.createContext();
+export const ChannelContext = React.createContext();
+
+
 function App() {
 
 
   return (
     <div className="App">
       {/* <ClassMouse /> */}
-      <MouseContainer />
+      {/* <MouseContainer /> */}
+      {/* <FetchData /> */}
+      <UserContext.Provider value={'raj'}>
+         <ChannelContext.Provider value={'ccd'}>
+        <ComponentC />
+         </ChannelContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 }
